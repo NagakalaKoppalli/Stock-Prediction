@@ -1,0 +1,10 @@
+import yfinance as yf
+
+# Download historical data for Apple Inc. from 2010-01-01 to 2021-12-31
+aapl = yf.download('AAPL', start='2010-01-01', end='2021-12-31')
+
+# Drop any rows containing missing values
+aapl = aapl.dropna()
+
+# Save the data to a CSV file
+aapl.to_csv('AAPL.csv')
